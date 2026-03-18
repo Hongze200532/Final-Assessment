@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Python: Set up pocm2526 from YAML",
+      "type": "shell",
+      "command": "/bin/zsh",
+      "args": [
+        "-lc",
+        "if [ -x '${workspaceFolder}/.conda/pocm2526/bin/python' ]; then /opt/anaconda3/bin/conda env update --yes --prefix '${workspaceFolder}/.conda/pocm2526' --file '${workspaceFolder}/Q3/pocm2526.yaml' --prune; else /opt/anaconda3/bin/conda env create --yes --prefix '${workspaceFolder}/.conda/pocm2526' --file '${workspaceFolder}/Q3/pocm2526.yaml'; fi"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Jupyter: Register pocm2526 kernel",
+      "type": "process",
+      "command": "${workspaceFolder}/.conda/pocm2526/bin/python",
+      "args": [
+        "-m",
+        "ipykernel",
+        "install",
+        "--prefix",
+        "${workspaceFolder}/.conda/pocm2526",
+        "--name",
+        "pocm2526",
+        "--display-name",
+        "Python (pocm2526)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Python: Full pocm2526 setup",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Python: Set up pocm2526 from YAML",
+        "Jupyter: Register pocm2526 kernel"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
