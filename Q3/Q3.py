@@ -2,7 +2,6 @@
 Question 3 - Agent-based modeling
 Hongze Lin
 '''
-
 # ==================== Import packages ====================
 import numpy as np
 import pandas as pd
@@ -14,6 +13,9 @@ from OpinionModel import OpinionWorld
 SEED = 42
 
 # ==================== Q3(a) ====================
+"""
+Given Model Running
+"""
 model_a = OpinionWorld(seed=SEED) # Default confidence_threshold = 2.0 [cite: 62]
 
 # 50 steps
@@ -35,6 +37,9 @@ plt.grid(True, alpha=0.5)
 plt.show()
 
 # ==================== Q3(b)(i) ====================
+"""
+Threshold Plotting with two different confidence
+"""
 d_values_test = [0.5, 0.2]
 
 fig, axes = plt.subplots(1, 2, figsize=(15, 5))
@@ -58,6 +63,9 @@ plt.tight_layout()
 plt.show()
 
 # ==================== Q3(b)(ii) ====================
+"""
+Relation Between Number of Cliques and Confidence Threshold
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from OpinionModel import OpinionWorld
@@ -103,6 +111,9 @@ plt.grid(True, alpha=0.5)
 plt.show()
 
 # ==================== Q3(c)(i) ====================
+"""
+The effect of neighbourhood size on opinion dynamics
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -152,6 +163,9 @@ plt.grid(True, alpha=0.3)
 plt.show()
 
 # ==================== Q3(d) ====================
+"""
+Testing with custom distribution
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from OpinionModel import OpinionWorld
@@ -176,6 +190,9 @@ plt.grid(True, alpha=0.5)
 plt.show()
 
 # ==================== Q3(e) ====================
+"""
+Stubborn Voters Simulation
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from OpinionModel import OpinionWorld

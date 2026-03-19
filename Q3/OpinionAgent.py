@@ -11,7 +11,7 @@ class OpinionAgent(CellAgent):
             learning_rate,
             neighbourhood_size,
             confidence_threshold,
-            is_stubborn=False, # [新增] 默认该主体不是顽固派
+            is_stubborn=False, 
         ):
         super().__init__(model)
 
@@ -20,10 +20,9 @@ class OpinionAgent(CellAgent):
         self.learning_rate = learning_rate
         self.neighbourhood_size = neighbourhood_size
         self.confidence_threshold = confidence_threshold
-        self.is_stubborn = is_stubborn # [新增] 记录该主体的顽固状态
+        self.is_stubborn = is_stubborn 
 
     def update_opinion(self, other):
-        # [新增] 如果该主体是顽固的反对者，直接拒绝更新观点
         if self.is_stubborn:
             return
 
